@@ -1,0 +1,12 @@
+{
+    "name": "demo-asset",
+    "title": "Demo Asset",
+    "description": "Asset for demo-app. This just contains Pandas.",
+    "version": "0.0.1",
+    "distribution": "Ubuntu",
+    "release": "20.04",
+    "runSpecVersion": "0",
+    "execDepends": [
+        {"name": "pandas", "version":"2.0.3", "package_manager": "pip"}
+    ]
+}

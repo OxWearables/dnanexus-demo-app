@@ -1,0 +1,70 @@
+{
+  "name": "demo-app",
+  "title": "demo-app",
+  "summary": "Demo python app that processes a CSV file with pandas and outputs a JSON file",
+  "dxapi": "1.0.0",
+  "version": "0.0.1",
+  "inputSpec": [
+    {
+      "name": "input_file",
+      "label": "Input CSV file",
+      "class": "file",
+      "optional": false,
+      "patterns": [
+        "*"
+      ],
+      "help": ""
+    },
+    {
+      "name": "n",
+      "label": "How many rows to read from the CSV file",
+      "class": "int",
+      "optional": true,
+      "default": 1,
+      "help": ""
+    }
+  ],
+  "outputSpec": [
+    {
+      "name": "output_file",
+      "label": "Output JSON file",
+      "class": "file",
+      "patterns": [
+        "*"
+      ],
+      "help": ""
+    }
+  ],
+  "runSpec": {
+    "timeoutPolicy": {
+      "*": {
+        "hours": 48
+      }
+    },
+    "interpreter": "python3",
+    "file": "src/demo-app.py",
+    "distribution": "Ubuntu",
+    "release": "20.04",
+    "version": "0",
+    "assetDepends": [
+      {
+        "id": "record-GvQb1ZjJy5Yb7Qj0fk6Y4gK7"
+      }
+    ]
+  },
+  "access": {
+    "network": [
+      "*"
+    ],
+    "project": "CONTRIBUTE"
+  },
+  "regionalOptions": {
+    "aws:eu-west-2": {
+      "systemRequirements": {
+        "*": {
+          "instanceType": "mem1_ssd1_v2_x4"
+        }
+      }
+    }
+  }
+}
